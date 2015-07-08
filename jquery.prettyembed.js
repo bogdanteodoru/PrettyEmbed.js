@@ -201,6 +201,9 @@
 
 			// if mobile, go straight to iframe
 			if (mobile) {
+				// this fix is for multiple instances on the same page when mobile/tablet
+				$(this).attr('data-pe-videoid', options.videoID);
+				
 				$(window).on('load', function() {
 					$('.pretty-embed').trigger('click');
 				});
